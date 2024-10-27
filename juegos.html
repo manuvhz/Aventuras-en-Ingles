@@ -3,156 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aventuras en Inglés</title>
+    <title>Juegos - Aventuras en Inglés</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0fff4; 
-            color: #333; 
+            background-color: #f0f8ff;
         }
 
         header {
-            background-color: #8bc34a; /* Verde limón */
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        h1 {
-            margin: 0;
+            background-color: #8bc34a;
             color: white;
-        }
-
-        nav {
-            position: relative;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav > ul > li {
-            display: inline-block;
-            position: relative;
+            padding: 15px;
+            text-align: center;
         }
 
         nav a {
             color: white;
+            margin: 0 15px;
             text-decoration: none;
-            padding: 10px 15px;
-            display: block;
         }
 
-        .dropdown {
-            display: none; 
-            position: absolute;
-            background-color: #4caf50; 
-            border-radius: 5px;
-            z-index: 1;
+        h1, h2 {
+            margin: 0;
         }
 
-        .dropdown li {
-            display: block;
-        }
-
-        .dropdown a {
-            padding: 10px 15px;
-        }
-
-        main {
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
             padding: 20px;
+        }
+
+        .game-item {
+            background-color: #ffffff; 
+            border: 2px solid #8bc34a; 
+            border-radius: 10px;
             text-align: center;
-        }
-
-        button {
-            background-color: #ffeb3b; /* Color amarillo */
-            color: #333;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #fdd835; 
-        }
-
-        .adventure-menu {
-            display: none; 
-            position: absolute;
-            background-color: #8bc34a; 
-            margin-top: 5px;
             padding: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
+            transition: transform 0.2s;
+            cursor: pointer; 
         }
 
-        .adventure-menu a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 5px 10px;
+        .game-item:hover {
+            transform: scale(1.05); 
+        }
+
+        .game-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
 
         footer {
+            background-color: #8bc34a;
+            color: white;
             text-align: center;
             padding: 10px;
-            background-color: #8bc34a; 
-            color: white;
-            position: fixed;
-            width: 100%;
+            position: relative;
             bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Aventuras en Inglés</h1>
+        <h1>Juegos</h1>
         <nav>
-            <ul>
-                    </ul>
-                </li>
-            </ul>
+            <a href="index.html">Inicio</a>
+            <a href="juegos.html">Juegos</a>
         </nav>
     </header>
+
     <main>
-        <section id="content">
-            <h2>¡Bienvenidos a la aventura del idioma!</h2>
-            <p>¡Aquí aprenderás inglés de una manera divertida!</p>
-            <button id="start-button">Comienza tu aventura</button>
-            <div class="adventure-menu" id="adventure-menu">
-                <h3>Opciones de Aventura</h3>
-                <a href="juegos.html">Juegos</a>
-                <a href="#">Cuentos</a>
-                <a href="#">Videos</a> 
-                <a href="#">Cultura</a> 
+        <h2>Elige un juego para empezar a jugar</h2>
+        <div class="grid-container">
+            <div class="game-item" onclick="openGame('https://www.example.com/juego1')">
+                <img src="https://via.placeholder.com/150" alt="Juego 1">
+                <h3>Juego 1</h3>
             </div>
-        </section>
+            <div class="game-item" onclick="openGame('https://www.example.com/juego2')">
+                <img src="https://via.placeholder.com/150" alt="Juego 2">
+                <h3>Juego 2</h3>
+            </div>
+            <div class="game-item" onclick="openGame('https://www.example.com/juego3')">
+                <img src="https://via.placeholder.com/150" alt="Juego 3">
+                <h3>Juego 3</h3>
+            </div>
+            <div class="game-item" onclick="openGame('https://www.example.com/juego4')">
+                <img src="https://via.placeholder.com/150" alt="Juego 4">
+                <h3>Juego 4</h3>
+            </div>
+            <!-- Agrega más juegos según sea necesario -->
+        </div>
     </main>
+
     <footer>
-        <p>&copy; 2024 Aventuras en Inglés</p>
+        <p>&copy; 2024 Aventuras en Inglés. Todos los derechos reservados.</p>
     </footer>
 
     <script>
-        document.getElementById('start-button').addEventListener('click', function(event) {
-            const adventureMenu = document.getElementById('adventure-menu');
-            adventureMenu.style.display = adventureMenu.style.display === 'block' ? 'none' : 'block'; // Alternar visibilidad
-        });
-
-        window.addEventListener('click', function(event) {
-            const adventureMenu = document.getElementById('adventure-menu');
-            if (!event.target.closest('#start-button')) {
-                adventureMenu.style.display = 'none'; // Cerrar el menú si se hace clic fuera
-            }
-        });
+        function openGame(url) {
+            // Abre el juego en una nueva pestaña
+            window.open(url, '_blank');
+            // Muestra un mensaje de alerta
+            alert("¡Disfruta jugando!");
+        }
     </script>
 </body>
 </html>

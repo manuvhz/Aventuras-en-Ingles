@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos - Aventuras en Inglés</title>
     <style>
-        /* Estilos de la página */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -17,11 +16,56 @@
         }
 
         header {
-            background-color: #8bc34a;
+            background: linear-gradient(to right, #8bc34a, #4caf50); /* Degradado de color */
             color: white;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            width: 100%; 
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative; /* Para posicionar el logo */
+        }
+
+        .header-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-title img {
+            width: 50px; /* Tamaño del logo */
+            margin-right: 10px; /* Espacio entre logo y texto */
+        }
+
+        .home-button {
+            background-color: #ffffff;
+            color: #8bc34a;
+            padding: 10px 20px;
+            border: 2px solid #8bc34a; /* Borde alrededor del botón */
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra en el botón */
+        }
+
+        .home-button:hover {
+            background-color: #8bc34a;
+            color: #ffffff;
+        }
+
+        .home-button img {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
         }
 
         .grid-container {
@@ -55,7 +99,7 @@
         }
 
         .game-item img {
-            width: 100px; /* Tamaño fijo para la imagen */
+            width: 100px;
             height: 100px;
             border-radius: 10px;
             object-fit: cover;
@@ -76,7 +120,6 @@
             width: 100%;
         }
 
-        /* Media queries para hacer el diseño responsivo */
         @media (max-width: 1024px) {
             .grid-container {
                 grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
@@ -98,13 +141,18 @@
 </head>
 <body>
     <header>
-        <h1>Juegos</h1>
+        <h1 class="header-title">
+            <img src="https://media.lordicon.com/icons/wired/flat/106-map.svg" alt="Logo"> 
+            Aventuras en Inglés - Juegos
+        </h1>
+        <a href="index.html" class="home-button">
+            <img src="https://img.icons8.com/ios-glyphs/30/8bc34a/home.png" alt="Home icon">Inicio
+        </a>
     </header>
 
     <main>
         <h2>Elige un juego para empezar a jugar</h2>
         <div class="grid-container">
-            <!-- Juegos existentes -->
             <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/7198201-adjectives_to_describe_people.html')">
                 <img src="https://cloud.educaplay.com/r1/img/activities/RELACIONAR_COLUMNAS/logoActivity.png?v=1729859970" alt="Adjectives">
                 <h3>Adjectives</h3>
@@ -126,29 +174,33 @@
             </div>
 
             <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/5701878-past_participle_verbs.html')">
-                <img src="https://via.placeholder.com/150" alt="Past Participle Verbs">
+                <img src="https://cloud.educaplay.com/r1/img/activities/RELACIONAR_COLUMNAS/logoActivity.png?v=1729859970" alt="Past Participle Verbs">
                 <h3>Past Participle Verbs</h3>
             </div>
 
-            <!-- Nuevos cuadros de juego -->
             <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/1234567-new_game1.html')">
-                <img src="https://via.placeholder.com/150" alt="New Game 1">
+                <img src="https://cloud.educaplay.com/r1/img/actividadSOPA.webp?v=1729859970" alt="New Game 1">
                 <h3>New Game 1</h3>
             </div>
 
-            <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/1234568-new_game2.html')">
-                <img src="https://via.placeholder.com/150" alt="New Game 2">
-                <h3>New Game 2</h3>
+            <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/2659720-adverbios_frecuencia_en_ingles.html')">
+                <img src="https://cloud.educaplay.com/r1/img/actividadSOPA.webp?v=1729859970" alt="Frequency Adverbs">
+                <h3>Frequency Adverbs</h3>
             </div>
 
-            <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/1234569-new_game3.html')">
-                <img src="https://via.placeholder.com/150" alt="New Game 3">
-                <h3>New Game 3</h3>
+            <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/7589804-let_s_practice_geography.html')">
+                <img src="https://cloud.educaplay.com/r1/img/actividadMAPA.webp?v=1729859970" alt="Geography">
+                <h3>Geography</h3>
             </div>
 
             <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/1234570-new_game4.html')">
-                <img src="https://via.placeholder.com/150" alt="New Game 4">
-                <h3>New Game 4</h3>
+                <img src="https://cloud.educaplay.com/r1/img/actividadSOPA.webp?v=1729859970" alt="Food and Drinks">
+                <h3>Food and Drinks</h3>
+            </div>
+
+            <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/7199086-under_the_ocean.html')">
+                <img src="https://cloud.educaplay.com/r1/img/actividadMAPA.webp?v=1729859970" alt="Under the Ocean">
+                <h3>Under the Ocean</h3>
             </div>
         </div>
     </main>
@@ -158,13 +210,10 @@
     </footer>
 
     <script>
-        // Función para abrir el juego en una ventana emergente
         function openGameWindow(url) {
-            const width = 600;
-            const height = 400;
-            const left = (screen.width - width) / 2;
-            const top = (screen.height - height) / 2;
-            window.open(url, 'gameWindow', `width=${width},height=${height},left=${left},top=${top}`);
+            const width = screen.availWidth;
+            const height = screen.availHeight;
+            window.open(url, 'gameWindow', `width=${width},height=${height},left=0,top=0`);
         }
     </script>
 </body>

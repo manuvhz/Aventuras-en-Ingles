@@ -25,7 +25,7 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            position: relative; /* Para posicionar el logo */
+            position: relative; 
         }
 
         .header-title {
@@ -37,15 +37,15 @@
         }
 
         .header-title img {
-            width: 50px; /* Tamaño del logo */
-            margin-right: 10px; /* Espacio entre logo y texto */
+            width: 50px; 
+            margin-right: 10px; 
         }
 
         .home-button {
             background-color: #ffffff;
             color: #8bc34a;
             padding: 10px 20px;
-            border: 2px solid #8bc34a; /* Borde alrededor del botón */
+            border: 2px solid #8bc34a; 
             border-radius: 5px;
             font-size: 1em;
             font-weight: bold;
@@ -54,7 +54,7 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra en el botón */
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
         }
 
         .home-button:hover {
@@ -71,6 +71,7 @@
         h1 {
             margin: 0;
             color: white;
+            font-size: 36px; 
         }
 
         nav {
@@ -117,7 +118,7 @@
         }
 
         button {
-            background-color: #ffeb3b; /* Color amarillo */
+            background-color: #ffeb3b; 
             color: #333;
             border: none;
             padding: 10px 20px;
@@ -175,7 +176,7 @@
             <div class="adventure-menu" id="adventure-menu">
                 <h3>Opciones de Aventura</h3>
                 <a href="juegos.html">Juegos</a>
-                <a href="cuentos.html">Cuentos</a>
+                <a href="cuentos.html">Juegos</a>
                 <a href="#">Videos</a> 
                 <a href="#">Cultura</a> 
             </div>
@@ -194,7 +195,7 @@
         window.addEventListener('click', function(event) {
             const adventureMenu = document.getElementById('adventure-menu');
             if (!event.target.closest('#start-button')) {
-                adventureMenu.style.display = 'none'; // Cerrar el menú si se hace clic fuera
+                adventureMenu.style.display = 'none'; 
             }
         });
     </script>

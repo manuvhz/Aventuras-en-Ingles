@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos - Aventuras en Inglés</title>
     <style>
+        /* Estilos de la página */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -23,23 +24,13 @@
             width: 100%; 
         }
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-
-        h1, h2 {
-            margin: 0;
-        }
-
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);      
+            grid-template-columns: repeat(5, 1fr); /* Para pantallas grandes */
             gap: 20px;
             padding: 20px;
-            max-width: 1200px; 
-            width: 100%; 
+            max-width: 1200px;
+            width: 100%;
         }
 
         .game-item {
@@ -47,9 +38,16 @@
             border: 2px solid #8bc34a; 
             border-radius: 10px;
             text-align: center;
-            padding: 10px;
+            padding: 20px;
+            width: 100%; 
+            height: 250px;
             transition: transform 0.2s;
             cursor: pointer; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
         }
 
         .game-item:hover {
@@ -57,9 +55,15 @@
         }
 
         .game-item img {
-            max-width: 100%;
-            height: auto;
+            width: 100px; /* Tamaño fijo para la imagen */
+            height: 100px;
             border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .game-item h3 {
+            font-size: 1em;
+            margin: 10px 0 0;
         }
 
         footer {
@@ -71,6 +75,25 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Media queries para hacer el diseño responsivo */
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+            }
+        }
     </style>
 </head>
 <body>
@@ -81,72 +104,51 @@
     <main>
         <h2>Elige un juego para empezar a jugar</h2>
         <div class="grid-container">
-            <!-- Fila 1 -->
-            <div class="game-item" onclick="window.open('https://es.educaplay.com/juego/6014644-banking.html', '_blank')">
-                <img src="https://via.placeholder.com/150" alt="Juego de Bancos">
-                <h3>Juego de Bancos</h3>
+            <!-- Juegos existentes -->
+            <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/7198201-adjectives_to_describe_people.html')">
+                <img src="https://cloud.educaplay.com/r1/img/activities/RELACIONAR_COLUMNAS/logoActivity.png?v=1729859970" alt="Adjectives">
+                <h3>Adjectives</h3>
             </div>
 
-
-            <div class="game-item" onclick="openGame('https://www.example.com/juego2')">
-                <img src="https://via.placeholder.com/150" alt="Juego 2">
-                <h3>Juego 2</h3>
-            </div>
-            <div class="game-item" onclick="openGame('https://www.example.com/juego3')">
-                <img src="https://via.placeholder.com/150" alt="Juego 3">
-                <h3>Juego 3</h3>
-            </div>
-            <div class="game-item" onclick="openGame('https://www.example.com/juego4')">
-                <img src="https://via.placeholder.com/150" alt="Juego 4">
-                <h3>Juego 4</h3>
-            </div>
-            <div class="game-item" onclick="openGame('https://www.example.com/juego5')">
-                <img src="https://via.placeholder.com/150" alt="Juego 5">
-                <h3>Juego 5</h3>
+            <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/7167962-celebrations.html')">
+                <img src="https://cloud.educaplay.com/r1/activitiesassets/CRUCIGRAMA/logoActivity.png" alt="Celebrations">
+                <h3>Celebrations</h3>
             </div>
 
-            <!-- Fila 2 -->
-            <div class="game-item" onclick="openGame('https://www.example.com/juego6')">
-                <img src="https://via.placeholder.com/150" alt="Juego 6">
-                <h3>Juego 6</h3>
-            </div>
-            <div class="game-item" onclick="openGame('https://www.example.com/juego7')">
-                <img src="https://via.placeholder.com/150" alt="Juego 7">
-                <h3>Juego 7</h3>
-            </div>
-            <div class="game-item" onclick="openGame('https://www.example.com/juego8')">
-                <img src="https://via.placeholder.com/150" alt="Juego 8">
-                <h3>Juego 8</h3>
-            </div>
-            <div class="game-item" onclick="openGame('https://www.example.com/juego9')">
-                <img src="https://via.placeholder.com/150" alt="Juego 9">
-                <h3>Juego 9</h3>
-            </div>
-            <div class="game-item" onclick="openGame('https://www.example.com/juego10')">
-                <img src="https://via.placeholder.com/150" alt="Juego 10">
-                <h3>Juego 10</h3>
+            <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/6110316-animals.html')">
+                <img src="https://cloud.educaplay.com/r1/img/activities/RELACIONAR_COLUMNAS/logoActivity.png?v=1729859970" alt="Animals">
+                <h3>Animals</h3>
+            </div>  
+
+            <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/6407296-wonderful_jobs.html')">
+                <img src="https://cloud.educaplay.com/r1/activitiesassets/CRUCIGRAMA/logoActivity.png" alt="Wonderful Jobs">
+                <h3>Wonderful Jobs</h3>
             </div>
 
-            <!-- Fila 3 -->
-            <div class="game-item" onclick="openGame('https://www.example.com/juego11')">
-                <img src="https://via.placeholder.com/150" alt="Juego 11">
-                <h3>Juego 11</h3>
+            <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/5701878-past_participle_verbs.html')">
+                <img src="https://via.placeholder.com/150" alt="Past Participle Verbs">
+                <h3>Past Participle Verbs</h3>
             </div>
-            <div class="game-item" onclick="openGame('https://www.example.com/juego12')">
-                <img src="https://via.placeholder.com/150" alt="Juego 12">
-                <h3>Juego 12</h3>
+
+            <!-- Nuevos cuadros de juego -->
+            <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/1234567-new_game1.html')">
+                <img src="https://via.placeholder.com/150" alt="New Game 1">
+                <h3>New Game 1</h3>
             </div>
-            <div class="game-item" onclick="openGame('https://www.example.com/juego13')">
-                <img src="https://via.placeholder.com/150" alt="Juego 13">
-                <h3>Juego 13</h3>
+
+            <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/1234568-new_game2.html')">
+                <img src="https://via.placeholder.com/150" alt="New Game 2">
+                <h3>New Game 2</h3>
             </div>
-            <div class="game-item" onclick="openGame('https://www.example.com/juego14')">
-                <img src="https://via.placeholder.com/150" alt="Juego 14">
-                <h3>Juego 14</h3>
+
+            <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/1234569-new_game3.html')">
+                <img src="https://via.placeholder.com/150" alt="New Game 3">
+                <h3>New Game 3</h3>
             </div>
-            <div class="game-item" onclick="openGame('https://www.example.com/juego15')">
-                <img src="https://via.placeholder.com/150" alt="Juego 15">
-                <h3>Juego 15</h3>
+
+            <div class="game-item" onclick="openGameWindow('https://es.educaplay.com/recursos-educativos/1234570-new_game4.html')">
+                <img src="https://via.placeholder.com/150" alt="New Game 4">
+                <h3>New Game 4</h3>
             </div>
         </div>
     </main>
@@ -156,9 +158,13 @@
     </footer>
 
     <script>
-        function openGame(url) {
-            window.open(url, '_blank');
-            alert("¡Disfruta jugando!");
+        // Función para abrir el juego en una ventana emergente
+        function openGameWindow(url) {
+            const width = 600;
+            const height = 400;
+            const left = (screen.width - width) / 2;
+            const top = (screen.height - height) / 2;
+            window.open(url, 'gameWindow', `width=${width},height=${height},left=${left},top=${top}`);
         }
     </script>
 </body>

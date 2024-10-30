@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultura en Países de Habla Inglesa</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background: linear-gradient(to right, #8bc34a, #4caf50); /* Degradado de color */
+            color: white;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center; /* Alinea verticalmente los elementos */
+            position: relative;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            padding-right: 20px; /* Espacio a la derecha del título */
+        }
+
+        .header-title img {
+            width: 50px; 
+            margin-right: 10px; 
+        }
+
+        .header-text {
+            text-align: center; 
+            flex: 1; 
+            margin: 0;
+            padding: 0 20px; 
+        }
+
+        .home-button {
+            background-color: #ffffff;
+            color: #8bc34a;
+            padding: 10px 20px;
+            border: 2px solid #8bc34a; 
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .home-button:hover {
+            background-color: #8bc34a;
+            color: #ffffff;
+        }
+
+        .home-button img {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .country-item {
+            background-color: #ffffff;
+            border: 2px solid #8bc34a;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.2s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        .country-item:hover {
+            transform: scale(1.05);
+        }
+
+        .country-flag img {
+            width: 100%;
+            height: auto;
+            max-height: 150px; 
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .country-item h3 {
+            font-size: 1.1em;
+            margin: 10px 0 5px;
+        }
+
+        .popup {
+            display: none; 
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 500px;
+            background-color: #ffffff;
+            border: 2px solid #4caf50;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .popup h3 {
+            margin-top: 0;
+            color: #4caf50;
+        }
+
+        .popup p {
+            font-size: 1em;
+            color: #333;
+        }
+
+        .popup-close {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #8bc34a;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup-close:hover {
+            background-color: #4caf50;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">
+            <img src="https://media.lordicon.com/icons/wired/flat/106-map.svg" alt="Logo"> 
+          Cultura
+        </h1>
+        <p class="header-text">Explora estos países para descubrir sus ricas tradiciones, historia y expresiones artísticas que revelan la esencia de cada cultura.</p>
+        <a href="index.html" class="home-button">
+            <img src="https://img.icons8.com/ios-glyphs/30/8bc34a/home.png" alt="Home icon">Inicio
+        </a>
+    </header>
+
+    <main>
+        <div class="grid-container">
+
+            <div class="country-item" onclick="showPopup('usa')">
+                <div class="country-flag">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="USA Flag">
+                </div>
+                <h3>Estados Unidos</h3>
+            </div>
+
+            <div class="country-item" onclick="showPopup('uk')">
+                <div class="country-flag">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK Flag">
+                </div>
+                <h3>Reino Unido</h3>
+            </div>
+
+            <div class="country-item" onclick="showPopup('canada')">
+                <div class="country-flag">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg" alt="Canada Flag">
+                </div>
+                <h3>Canadá</h3>
+            </div>
+
+            <div class="country-item" onclick="showPopup('australia')">
+                <div class="country-flag">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Flag_of_Australia.svg" alt="Australia Flag">
+                </div>
+                <h3>Australia</h3>
+            </div>
+
+            <div class="country-item" onclick="showPopup('newzealand')">
+                <div class="country-flag">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Flag_of_New_Zealand.svg" alt="New Zealand Flag">
+                </div>
+                <h3>Nueva Zelanda</h3>
+            </div>
+
+            <div class="country-item" onclick="showPopup('ireland')">
+                <div class="country-flag">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg" alt="Ireland Flag">
+                </div>
+                <h3>Irlanda</h3>
+            </div>
+        </div>
+    </main>
+
+    <div id="popup" class="popup">
+        <h3 id="popup-title"></h3>
+        <p id="popup-content"></p>
+        <button class="popup-close" onclick="closePopup()">Cerrar</button>
+    </div>
+
+    <script>
+        const countryData = {
+            "usa": {
+                title: "Estados Unidos",
+                content: "Famoso por su diversidad cultural, Estados Unidos ha dado al mundo géneros como el jazz, el rock y el hip-hop. La gastronomía varía según la región, desde la comida rápida hasta platos típicos como el BBQ y la comida cajún. También es reconocido por sus celebraciones como el Día de Acción de Gracias y el 4 de julio."
+            },
+            "uk": {
+                title: "Reino Unido",
+                content: "El Reino Unido tiene una historia rica y diversa, famosa por su monarquía, literatura y tradiciones como el té de las cinco. Londres es un centro de arte y cultura, mientras que Escocia, Gales e Irlanda del Norte aportan su propio sabor cultural, con festivales de música celta y deportes tradicionales como el cricket."
+            },
+            "canada": {
+                title: "Canadá",
+                content: "Canadá es conocido por sus paisajes naturales, la cultura bilingüe de inglés y francés y su amor por el hockey sobre hielo. La diversidad cultural incluye herencias indígenas, francesas y británicas, y festividades como el Día de Canadá y el Carnaval de Invierno de Quebec."
+            },
+            "australia": {
+                title: "Australia",
+                content: "Australia es famosa por su estilo de vida relajado, su fauna única y sus playas icónicas. La cultura aborigen tiene una gran influencia, y el país celebra eventos como el Día de Australia y festivales de arte en ciudades como Sídney y Melbourne."
+            },
+            "newzealand": {
+                title: "Nueva Zelanda",
+                content: "Reconocido por su herencia maorí y sus paisajes espectaculares, Nueva Zelanda es el lugar donde se filmó El Señor de los Anillos. La cultura maorí se celebra con la danza haka, y el rugby es el deporte más popular."
+            },
+            "ireland": {
+                title: "Irlanda",
+                content: "Irlanda es conocida por su música tradicional, el baile irlandés y sus paisajes verdes. Fiestas como el Día de San Patricio y el respeto por la historia celta son parte de su identidad, junto con el idioma gaélico, que se mantiene vivo en varias regiones."
+            }
+        };
+
+        function showPopup(country) {
+            const data = countryData[country];
+            document.getElementById('popup-title').innerText = data.title;
+            document.getElementById('popup-content').innerText = data.content;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

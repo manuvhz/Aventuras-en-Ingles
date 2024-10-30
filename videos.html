@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos - Aventuras en Inglés</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7751/7751143.png" type="image/x-icon"> 
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background: linear-gradient(to right, #8bc34a, #4caf50); 
+            color: white;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            padding-right: 20px; 
+        }
+
+        .header-title img {
+            width: 50px; 
+            margin-right: 10px; 
+        }
+
+        .header-text {
+            text-align: center; 
+            flex: 1; 
+            margin: 0;
+            padding: 0 20px; 
+        }
+
+        .home-button {
+            background-color: #ffffff;
+            color: #8bc34a;
+            padding: 10px 20px;
+            border: 2px solid #8bc34a; 
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .home-button:hover {
+            background-color: #8bc34a;
+            color: #ffffff;
+        }
+
+        .home-button img {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px;
+            padding: 20px;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .video-item {
+            background-color: #ffffff;
+            border: 2px solid #8bc34a;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.2s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        .video-item:hover {
+            transform: scale(1.05);
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: auto;
+            max-height: 180px; 
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .video-item h3 {
+            font-size: 1.1em;
+            margin: 10px 0 5px;
+        }
+
+        footer {
+            background-color: #8bc34a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+        }
+
+        @media (max-width: 1200px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">
+            <img src="https://media.lordicon.com/icons/wired/flat/106-map.svg" alt="Logo"> 
+            Videos educativos
+        </h1>
+        <p class="header-text">Explora estos videos para aprender inglés de una manera divertida y educativa.</p>
+        <a href="index.html" class="home-button">
+            <img src="https://img.icons8.com/ios-glyphs/30/8bc34a/home.png" alt="Home icon">Inicio
+        </a>
+    </header>
+
+    <main>
+        <div class="grid-container">
+
+            <div class="video-item" onclick="openVideo('https://youtu.be/TZ6eC2EMstQ')">
+                <div class="video-thumbnail">
+                    <img src="https://i.ytimg.com/vi/TZ6eC2EMstQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDNyTBC587L6fRmO3sBhHrEJRTVmA" alt="Video 1">
+                </div>
+                <h3>La Familia en Inglés</h3>
+                <p>Este es un video ideal para adultos y niños que desean aprender inglés de una manera fácil y divertida con Amigo Mumu.</p>
+            </div>
+
+            <div class="video-item" onclick="openVideo('https://youtu.be/4ZeBdCGGvWA')">
+                <div class="video-thumbnail">
+                    <img src="https://i.ytimg.com/vi/4ZeBdCGGvWA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCMeo6khnypZqKAqcLAFb0jZfJR2g" alt="Video 2">
+                </div>
+                <h3>Útiles Escolares en Inglés </h3>
+                <p>Este es un video ideal para adultos y niños que desean aprender inglés de una manera fácil y muy divertida con Amigo Mumu.</p>
+            </div>
+
+            <div class="video-item" onclick="openVideo('https://www.youtube.com/watch?v=aT9CKFC9D2c')">
+                <div class="video-thumbnail">
+                    <img src="https://i.ytimg.com/vi/aT9CKFC9D2c/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDgRiQ6C0JTmD6Np4Hywkw13bH2jA" alt="Video 3">
+                </div>
+                <h3>Emociones en Inglés</h3>
+                <p>Amiguito, ¿has notado que todos los días / tenemos diferentes sentimientos y emociones?
+                    A veces estamos felices, otras veces no tanto, pero siempre sentimos algo.</p>
+            </div>
+
+            <div class="video-item" onclick="openVideo('https://www.youtube.com/watch?v=0tlr2qhnam8')">
+                <div class="video-thumbnail">
+                    <img src="https://i.ytimg.com/vi/0tlr2qhnam8/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAvtJdYs77Wc4DppkRXgChRCGhalQ" alt="Video 4">
+                </div>
+                <h3>Medios de transporte</h3>
+                <p>
+                    Los medios de transporte, es un video donde podrán aprender los principales medios de transporte en inglés.</p>
+            </div>
+
+            <div class="video-item" onclick="openVideo('https://www.youtube.com/watch?v=6z35B40Gxhw')">
+                <div class="video-thumbnail">
+                    <img src="https://i.ytimg.com/vi/6z35B40Gxhw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDILnpufdh3kfQ2ej7A9JhRnB7k-g" alt="Video 5">
+                </div>
+                <h3>Partes del Cuerpo en Inglés</h3>
+                <p>Hola amiguito, yo soy Mumu, me alegro que estés aquí, en esta clase aprenderemos las partes del cuerpo humano en inglés.</p>
+            </div>
+
+            <div class="video-item" onclick="openVideo('https://www.youtube.com/watch?v=W_LhyqgaRJI')">
+                <div class="video-thumbnail">
+                    <img src="https://i.ytimg.com/vi/W_LhyqgaRJI/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC4fFZ0WzwZnGVyvFcH7-y4kL3M0w" alt="Video 6">
+                </div>
+                <h3>El Abecedario en Inglés</h3>
+                <p>Debajo de cada letra está escrita la forma fonética que debemos usar, así podremos entender y pronunciar mejor las letras del alfabeto en inglés</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Aventuras en Inglés. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function openVideo(url) {
+            const width = window.innerWidth * 0.8;
+            const height = window.innerHeight * 0.8;
+            window.open(url, 'videoWindow', `width=${width},height=${height},left=${(window.innerWidth - width) / 2},top=${(window.innerHeight - height) / 2}`);
+        }
+    </script>
+</body>
+</html>

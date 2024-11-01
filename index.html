@@ -54,6 +54,36 @@
             50% { transform: scale(1.05); }
         }
 
+        nav {
+            width: 100%;
+            background-color: #4caf50;
+            padding: 10px 0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #e8f5e9;
+        }
+
         main {
             max-width: 1200px;
             padding: 20px;
@@ -227,6 +257,19 @@
         </h1>
     </header>
 
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="metodologia.html">Metodología</a></li>
+            <li><a href="recursos.html">Recursos Adicionales</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="testimonios.html">Testimonios</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+        </ul>
+    </nav>
+
     <main>
         <h2 class="centrado">¡Bienvenidos a la aventura del idioma!</h2>
         <p class="centrado">Explora la cultura de varios países de habla inglesa.</p>
@@ -244,23 +287,21 @@
                 <h3>Videos</h3>
                 <p>Explora videos educativos para mejorar tu comprensión.</p>
             </div>
-            <div class="card" data-url="cultura.html">
-                <h3>Cultura</h3>
-                <p>Conoce las culturas de los países de habla inglesa.</p>
+            <div class="card" data-url="practica.html">
+                <h3>Práctica</h3>
+                <p>Practica tu inglés con ejercicios interactivos.</p>
             </div>
         </div>
 
         <div class="about-section">
             <h2>Sobre Nosotros</h2>
-            <p>En Aventuras en Inglés, nos dedicamos a ofrecer una experiencia de aprendizaje divertida y efectiva.</p>
-            <p>Nuestro objetivo es ayudar a los estudiantes a mejorar su inglés mientras exploran diferentes aspectos de la cultura de habla inglesa.</p>
+            <p>Aventuras en Inglés es una plataforma educativa que ofrece un enfoque innovador para aprender inglés a través de la cultura y el entretenimiento.</p>
         </div>
 
         <div class="testimonials">
             <h2>Testimonios</h2>
-            <div class="testimonial">"¡Me encanta aprender inglés a través de juegos! Es muy divertido." - Ana</div>
-            <div class="testimonial">"Los cuentos son una excelente manera de mejorar mi vocabulario." - Luis</div>
-            <div class="testimonial">"Los videos son educativos y entretenidos. ¡Gracias!" - Marta</div>
+            <div class="testimonial">"¡Me encanta aprender inglés aquí! Los recursos son divertidos y útiles." - Juan</div>
+            <div class="testimonial">"Gracias a Aventuras en Inglés, he mejorado mucho mi vocabulario." - Maria</div>
         </div>
 
         <div class="faq-section">
@@ -273,51 +314,45 @@
             <div class="faq-answer">¡Por supuesto! Siempre estamos buscando nuevos recursos y ideas.</div>
         </div>
 
+
         <div class="contact-section">
             <h2>Contacto</h2>
-            <form id="contact-form">
+            <form>
                 <input type="text" placeholder="Tu nombre" required>
-                <input type="email" placeholder="Tu correo electrónico" required>
-                <textarea rows="5" placeholder="Tu mensaje" required></textarea>
+                <input type="email" placeholder="Tu email" required>
+                <textarea placeholder="Tu mensaje" required></textarea>
                 <button type="submit">Enviar</button>
             </form>
-        </div>
-
-        <div class="social-icons">
-            <a href="https://facebook.com" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" class="social-icon">
-            </a>
-            <a href="https://twitter.com" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter" class="social-icon">
-            </a>
-            <a href="https://instagram.com" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="Instagram" class="social-icon">
-            </a>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Aventuras en Inglés. Todos los derechos reservados.</p>
-        <div class="footer-icons">
-            <img src="https://img.icons8.com/material-outlined/24/ffffff/facebook.png" alt="Facebook">
-            <img src="https://img.icons8.com/material-outlined/24/ffffff/twitter.png" alt="Twitter">
-            <img src="https://img.icons8.com/material-outlined/24/ffffff/instagram-new.png" alt="Instagram">
-            <img src="https://img.icons8.com/material-outlined/24/ffffff/email.png" alt="Email">
-        </div>
+        &copy; 2024 Aventuras en Inglés. Todos los derechos reservados.
     </footer>
 
-    <button class="floating-button" onclick="alert('¡Hola! Bienvenido a Aventuras en Inglés.')">+</button>
+    <button class="floating-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
-    
+    <div class="social-icons">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Facebook" class="social-icon" onclick="window.open('https://facebook.com', '_blank');">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Twitter" class="social-icon" onclick="window.open('https://twitter.com', '_blank');">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Instagram" class="social-icon" onclick="window.open('https://instagram.com', '_blank');">
+    </div>
+
     <script>
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
             card.addEventListener('click', () => {
-                const url = card.getAttribute('data-url');
-                window.location.href = url; // Redirige a la URL correspondiente
+                window.location.href = card.getAttribute('data-url');
+            });
+        });
+
+        const faqs = document.querySelectorAll('.faq');
+        faqs.forEach(faq => {
+            faq.addEventListener('click', () => {
+                const answer = faq.querySelector('.faq-answer');
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
             });
         });
     </script>
 </body>
 </html>
-                    

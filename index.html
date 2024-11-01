@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aventuras en Inglés</title>
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7751/7751143.png" type="image/x-icon"> 
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7751/7751143.png" type="image/x-icon">
     <style>
-           body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -14,19 +14,19 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
+            overflow-x: hidden;
         }
 
         header {
-            background: linear-gradient(to right, #8bc34a, #4caf50); /* Degradado de color */
+            background: linear-gradient(45deg, #8bc34a, #4caf50, #8bc34a);
             color: white;
             padding: 20px;
-            text-align: center;
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            position: relative; 
         }
 
         .header-title {
@@ -35,130 +35,189 @@
             margin: 0;
             display: flex;
             align-items: center;
+            gap: 10px;
+            animation: pulse 3s infinite;
         }
 
         .header-title img {
-            width: 50px; 
-            margin-right: 10px; 
+            width: 50px;
+            animation: bounce 1.5s infinite alternate;
         }
 
-        .home-button {
-            background-color: #ffffff;
-            color: #8bc34a;
-            padding: 10px 20px;
-            border: 2px solid #8bc34a; 
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.2s, color 0.2s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
         }
 
-        .home-button:hover {
-            background-color: #8bc34a;
-            color: #ffffff;
-        }
-
-        .home-button img {
-            width: 18px;
-            height: 18px;
-            margin-right: 8px;
-        }
-
-        h1 {
-            margin: 0;
-            color: white;
-            font-size: 36px; 
-        }
-
-        nav {
-            position: relative;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav > ul > li {
-            display: inline-block;
-            position: relative;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            display: block;
-        }
-
-        .dropdown {
-            display: none; 
-            position: absolute;
-            background-color: #4caf50; 
-            border-radius: 5px;
-            z-index: 1;
-        }
-
-        .dropdown li {
-            display: block;
-        }
-
-        .dropdown a {
-            padding: 10px 15px;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         main {
+            max-width: 1200px;
             padding: 20px;
-            text-align: center;
         }
 
-        button {
-            background-color: #ffeb3b; 
-            color: #333;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
+        h2.centrado {
+            text-align: center;
+            color: #4caf50;
+            margin: 10px 0;
+            font-size: 1.8em;
+        }
+
+        .centrado {
+            text-align: center;
+            color: #000000;
+            margin: 10px 0;
+
+        }
+
+
+        .description-cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            max-width: 1200px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 2px solid #8bc34a;
+            border-radius: 10px;
+            padding: 20px;
+            width: 220px;
+            text-align: center;
             cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            background-color: #e8f5e9;
+        }
+
+        .about-section, .testimonials, .faq-section, .contact-section {
+            background-color: #e8f5e9;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .about-section h2, .testimonials h2, .faq-section h2, .contact-section h2 {
+            margin: 0 0 20px 0;
+            color: #4caf50;
+        }
+
+        .testimonial {
+            margin: 15px 0;
+            border-left: 4px solid #8bc34a;
+            padding-left: 20px;
+            font-style: italic;
+        }
+
+        .faq {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #ffe0b2;
             border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
             transition: background-color 0.3s;
         }
 
-        button:hover {
-            background-color: #fdd835; 
-        }
-
-        .adventure-menu {
-            display: none; 
-            position: absolute;
-            background-color: #8bc34a; 
-            margin-top: 5px;
-            padding: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-        }
-
-        .adventure-menu a {
-            display: block;
+        .faq:hover {
+            background-color: #ef5350;
             color: white;
-            text-decoration: none;
-            padding: 5px 10px;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background-color: #ffab91;
+            border-radius: 5px;
+        }
+
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-section input, .contact-section textarea {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #8bc34a;
+            border-radius: 5px;
+        }
+
+        .contact-section button {
+            padding: 10px;
+            background-color: #8bc34a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-section button:hover {
+            background-color: #4caf50;
         }
 
         footer {
             text-align: center;
             padding: 10px;
-            background-color: #8bc34a; 
+            background-color: #8bc34a;
             color: white;
-            position: fixed;
             width: 100%;
+            position: fixed;
             bottom: 0;
+        }
+
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #8bc34a;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .floating-button:hover {
+            background-color: #4caf50;
+            transform: scale(1.1);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -169,35 +228,101 @@
             Aventuras en Inglés
         </h1>
     </header>
+
     <main>
-        <section id="content">
-            <h2>¡Bienvenidos a la aventura del idioma!</h2>
-            <p>¡Aquí aprenderás inglés de una manera divertida!</p>
-            <button id="start-button">Comienza tu aventura</button>
-            <div class="adventure-menu" id="adventure-menu">
-                <h3>Opciones de Aventura</h3>
-                <a href="juegos.html">Juegos</a>
-                <a href="cuentos.html">Cuentos</a>
-                <a href="videos.html">Videos</a>
-                <a href="cultura.html">Cultura</a>
+        <h2 class="centrado">¡Bienvenidos a la aventura del idioma!</h2>
+        <p class="centrado">Explora la cultura de varios países de habla inglesa.</p>
+
+        <div class="description-cards">
+            <div class="card" data-url="juegos.html">
+                <h3>Juegos</h3>
+                <p>Aprende inglés jugando y explorando distintos desafíos.</p>
             </div>
-        </section>
+            <div class="card" data-url="cuentos.html">
+                <h3>Cuentos</h3>
+                <p>Descubre cuentos fascinantes para aprender y divertirte.</p>
+            </div>
+            <div class="card" data-url="videos.html">
+                <h3>Videos</h3>
+                <p>Explora videos educativos para mejorar tu comprensión.</p>
+            </div>
+            <div class="card" data-url="cultura.html">
+                <h3>Cultura</h3>
+                <p>Conoce las culturas de los países de habla inglesa.</p>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>Sobre Nosotros</h2>
+            <p>En Aventuras en Inglés, nos dedicamos a ofrecer una experiencia de aprendizaje divertida y efectiva.</p>
+            <p>Nuestro objetivo es ayudar a los estudiantes a mejorar su inglés mientras exploran diferentes aspectos de la cultura de habla inglesa.</p>
+        </div>
+
+        <div class="testimonials">
+            <h2>Testimonios</h2>
+            <div class="testimonial">"¡Me encanta aprender inglés a través de juegos! Es muy divertido." - Ana</div>
+            <div class="testimonial">"Los cuentos son una excelente manera de mejorar mi vocabulario." - Luis</div>
+            <div class="testimonial">"Los videos son educativos y entretenidos. ¡Gracias!" - Marta</div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq">¿Qué recursos ofrecen?</div>
+            <div class="faq-answer">Ofrecemos juegos, cuentos, videos y más para aprender inglés.</div>
+            <div class="faq">¿Es gratis?</div>
+            <div class="faq-answer">Sí, todos nuestros recursos son gratuitos.</div>
+            <div class="faq">¿Puedo contribuir?</div>
+            <div class="faq-answer">¡Por supuesto! Siempre estamos buscando nuevos recursos y ideas.</div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Contacto</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <textarea rows="5" placeholder="Tu mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter" class="social-icon">
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="Instagram" class="social-icon">
+            </a>
+        </div>
     </main>
+
     <footer>
         <p>&copy; 2024 Aventuras en Inglés</p>
     </footer>
 
+    <button class="floating-button" onclick="alert('¡Hola! Bienvenido a Aventuras en Inglés.')">+</button>
+
     <script>
-        document.getElementById('start-button').addEventListener('click', function(event) {
-            const adventureMenu = document.getElementById('adventure-menu');
-            adventureMenu.style.display = adventureMenu.style.display === 'block' ? 'none' : 'block'; // Alternar visibilidad
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                const url = card.getAttribute('data-url');
+                window.location.href = url;
+            });
         });
 
-        window.addEventListener('click', function(event) {
-            const adventureMenu = document.getElementById('adventure-menu');
-            if (!event.target.closest('#start-button')) {
-                adventureMenu.style.display = 'none'; 
-            }
+        document.querySelectorAll('.faq').forEach(faq => {
+            faq.addEventListener('click', () => {
+                const answer = faq.nextElementSibling;
+                answer.style.display = answer.style.display === 'none' || answer.style.display === '' ? 'block' : 'none';
+            });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.');
+            e.target.reset();
         });
     </script>
 </body>

@@ -17,12 +17,12 @@
         }
 
         header {
-            background: linear-gradient(to right, #8bc34a, #4caf50); 
+            background: linear-gradient(to right, #8bc34a, #4caf50); /* Degradado de color */
             color: white;
             padding: 20px;
             width: 100%;
             display: flex;
-            align-items: center;
+            align-items: center; /* Alinea verticalmente los elementos */
             position: relative;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
@@ -173,6 +173,39 @@
                 grid-template-columns: 1fr; 
             }
         }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu a.inicio {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #4caf50;
+            padding: 10px 0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -186,6 +219,17 @@
             <img src="https://img.icons8.com/ios-glyphs/30/8bc34a/home.png" alt="Home icon">Inicio
         </a>
     </header>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="metodologia.html">Metodología</a></li>
+            <li><a href="recursos.html">Recursos Adicionales</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+        </ul>
+    </nav>
 
     <main>
         <div class="grid-container">

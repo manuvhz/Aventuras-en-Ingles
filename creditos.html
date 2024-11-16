@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créditos - Aventuras en Inglés</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7751/7751143.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(to right, #8bc34a, #4caf50); 
+            color: white;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            padding-right: 20px; 
+        }
+
+        .header-title img {
+            width: 50px; 
+            margin-right: 10px; 
+        }
+
+        .header-text {
+            text-align: center; 
+            flex: 1; 
+            margin: 0;
+            padding: 0 20px; 
+        }
+
+        .home-button {
+            background-color: #ffffff;
+            color: #8bc34a;
+            padding: 10px 20px;
+            border: 2px solid #8bc34a; 
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .home-button:hover {
+            background-color: #8bc34a;
+            color: #ffffff;
+        }
+
+        .home-button img {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+        }
+
+        .vision-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f1f1f1;
+            margin-top: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .vision-section h2 {
+            font-size: 2.2em;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        .vision-section p {
+            font-size: 1.1em;
+            color: #666;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            justify-items: center;
+            margin-top: 40px;
+            padding: 0 20px;
+            animation: slideUp 2s ease-in-out;
+        }
+
+        .team-member {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            width: 250px;
+            transform: translateY(30px);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .team-member h3 {
+            font-size: 1.5em;
+            color: #4caf50;
+        }
+
+        .team-member p {
+            color: #666;
+            font-style: italic;
+        }
+
+        footer {
+            background-color: #8bc34a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin-top: 10px;
+        }
+
+        .footer-icons img {
+            width: 30px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .team-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        nav {
+            background-color: #4caf50;
+            padding: 15px 0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #ffeb3b;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="header-title">
+            <img src="https://media.lordicon.com/icons/wired/flat/106-map.svg" alt="Logo"> 
+            Créditos
+        </h1>
+        <p class="header-text">Descubre quienes son los autores de la página.</p>
+        <a href="index.html" class="home-button">
+            <img src="https://img.icons8.com/ios-glyphs/30/8bc34a/home.png" alt="Home icon">Inicio
+        </a>
+    </header>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="metodologia.html">Metodología</a></li>
+            <li><a href="recursos.html">Recursos Adicionales</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="creditos.html">Créditos</a></li>
+        </ul>
+    </nav>
+
+    <div class="vision-section">
+        <h2>Nuestra Visión</h2>
+        <p>
+            En "Aventuras en Inglés" creemos que aprender inglés debe ser una experiencia divertida y accesible para todos. Nuestra visión es ofrecer recursos educativos innovadores, fáciles de usar y dinámicos, con el objetivo de fomentar un aprendizaje activo y entretenido. Queremos empoderar a los estudiantes para que aprendan a su propio ritmo y se sientan motivados a continuar su viaje de aprendizaje.
+        </p>
+    </div>
+
+    <div class="team-container">
+        <div class="team-member" style="animation-delay: 0s;">
+            <h3>Manuel Vargas</h3>
+            <p>Estudiante de la Universidad de Córdoba.</p>
+        </div>
+
+        <div class="team-member" style="animation-delay: 0.2s;">
+            <h3>Jean Alvarez</h3>
+            <p>Estudiante de la Universidad de Córdoba.</p>
+        </div>
+
+        <div class="team-member" style="animation-delay: 0.4s;">
+            <h3>Isaac Martinez</h3>
+            <p>Estudiante de la Universidad de Córdoba.</p>
+        </div>
+
+        <div class="team-member" style="animation-delay: 0.6s;">
+            <h3>Andrés Buelvas</h3>
+            <p>Estudiante de la Universidad de Córdoba.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Aventuras en Inglés. Todos los derechos reservados.</p>
+        <div class="footer-icons">
+            <img src="https://img.icons8.com/material-outlined/24/ffffff/facebook.png" alt="Facebook">
+            <img src="https://img.icons8.com/material-outlined/24/ffffff/twitter.png" alt="Twitter">
+            <img src="https://img.icons8.com/material-outlined/24/ffffff/instagram-new.png" alt="Instagram">
+            <img src="https://img.icons8.com/material-outlined/24/ffffff/email.png" alt="Email">
+        </div>
+    </footer>
+
+</body>
+</html>

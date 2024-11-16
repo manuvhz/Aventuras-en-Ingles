@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos Adicionales - Aventuras en Inglés</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7751/7751143.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background: linear-gradient(to right, #8bc34a, #4caf50); 
+            color: white;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            padding-right: 20px; 
+        }
+
+        .header-title img {
+            width: 50px; 
+            margin-right: 10px; 
+        }
+
+        .header-text {
+            text-align: center; 
+            flex: 1; 
+            margin: 0;
+            padding: 0 20px; 
+        }
+
+        .home-button {
+            background-color: #ffffff;
+            color: #8bc34a;
+            padding: 10px 20px;
+            border: 2px solid #8bc34a; 
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .home-button:hover {
+            background-color: #8bc34a;
+            color: #ffffff;
+        }
+
+        .home-button img {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+        }
+
+        h2 {
+            color: #4caf50;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #4caf50;
+            padding: 10px 0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        main {
+            max-width: 1200px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .resources-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .resource-card {
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            transition: transform 0.2s;
+        }
+
+        .resource-card:hover {
+            transform: scale(1.05);
+        }
+
+        .resource-card  button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 0.9em;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+        
+        .resource-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .resource-card h3 {
+            color: #4caf50;
+            margin: 15px 0;
+        }
+
+        footer {
+            background-color: #8bc34a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+        }
+
+        .footer-icons img {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .menu a:hover {
+            color: #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">
+            <img src="https://media.lordicon.com/icons/wired/flat/106-map.svg" alt="Logo"> 
+            Recursos Adicionales
+        </h1>
+        <p class="header-text">Herramientas únicas para enriquecer el aprendizaje de tus hijos.</p>
+        <a href="index.html" class="home-button">
+            <img src="https://img.icons8.com/ios-glyphs/30/8bc34a/home.png" alt="Home icon">Inicio
+        </a>
+    </header>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="metodologia.html">Metodología</a></li>
+            <li><a href="recursos.html">Recursos Adicionales</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="creditos.html">Créditos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Recursos Adicionales de Aprendizaje</h2>
+        <div class="resources-container">
+            <div class="resource-card">
+                <img src="https://thumbs.dreamstime.com/b/ni%C3%B1o-que-lee-un-diccionario-rojo-grande-43302612.jpg" alt="Diccionario visual">
+                <h3>Diccionario Visual en Línea</h3>
+                <p>Explora vocabulario en inglés con imágenes y ejemplos interactivos.</p>
+                <a href="https://www.learnersdictionary.com/" target="_blank">
+                    <button>Ir al Diccionario</button>
+                </a>
+            </div>
+            <div class="resource-card">
+                <img src="https://i.ytimg.com/vi/DdeVCQNXsL0/maxresdefault.jpg" alt="Canciones infantiles">
+                <h3>Canciones Infantiles en Inglés</h3>
+                <p>Descubre canciones educativas para practicar inglés mientras te diviertes.</p>
+                <a href="https://www.youtube.com/c/SuperSimpleSongs" target="_blank">
+                    <button>Ver Canciones</button>
+                </a>
+            </div>
+            <div class="resource-card">
+                <img src="https://img.freepik.com/vector-premium/nino-feliz-lindo-jugando-al-futbol-ilustracion-vectorial-personajes-planos-dibujos-animados_1280751-9013.jpg" alt="Practica en línea">
+                <h3>Juegos de Práctica</h3>
+                <p>Plataforma interactiva con juegos para mejorar vocabulario y gramática.</p>
+                <a href="https://www.education.com/games/ela/" target="_blank">
+                    <button>Jugar Ahora</button>
+                </a>
+            </div>
+        </div>
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2024 Aventuras en Inglés. Todos los derechos reservados.</p>
+        <div class="footer-icons">
+            <img src="https://img.icons8.com/material-outlined/24/ffffff/facebook.png" alt="Facebook">
+            <img src="https://img.icons8.com/material-outlined/24/ffffff/twitter.png" alt="Twitter">
+            <img src="https://img.icons8.com/material-outlined/24/ffffff/instagram-new.png" alt="Instagram">
+            <img src="https://img.icons8.com/material-outlined/24/ffffff/email.png" alt="Email">
+        </div>
+    </footer>
+
+</body>
+</html>

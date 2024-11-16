@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Aventuras en Inglés</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7751/7751143.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background: linear-gradient(to right, #8bc34a, #4caf50); 
+            color: white;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            padding-right: 20px; 
+        }
+
+        .header-title img {
+            width: 50px; 
+            margin-right: 10px; 
+        }
+
+        .header-text {
+            text-align: center; 
+            flex: 1; 
+            margin: 0;
+            padding: 0 20px; 
+        }
+
+        .home-button {
+            background-color: #ffffff;
+            color: #8bc34a;
+            padding: 10px 20px;
+            border: 2px solid #8bc34a; 
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .home-button:hover {
+            background-color: #8bc34a;
+            color: #ffffff;
+        }
+
+        .home-button img {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+        }
+
+        footer {
+            background-color: #8bc34a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #4caf50;
+            padding: 10px 0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .event-card h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
+            color: #4caf50;
+        }
+
+        .event-card p {
+            font-size: 1em;
+            color: #555555;
+        }
+
+        .event-card .event-details {
+            font-size: 0.9em;
+            color: #888888;
+            margin-top: 10px;
+        }
+
+        .menu a:hover {
+            color: #ffeb3b;
+        }
+
+        .event-card .event-button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .event-card .event-button:hover {
+            background-color: #4caf50;
+        }
+
+        .events-container {
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px; 
+            justify-items: center; 
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); 
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">
+            <img src="https://media.lordicon.com/icons/wired/flat/106-map.svg" alt="Logo"> 
+            Eventos
+        </h1>
+        <p class="header-text">Disfruta de actividades educativas y divertidas mientras aprendes inglés.</p>
+        <a href="index.html" class="home-button">
+            <img src="https://img.icons8.com/ios-glyphs/30/8bc34a/home.png" alt="Home icon">Inicio
+        </a>
+    </header>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="metodologia.html">Metodología</a></li>
+            <li><a href="recursos.html">Recursos Adicionales</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="creditos.html">Créditos</a></li>
+        </ul>
+    </nav>
+
+    <div class="events-container">
+        <div class="event-card">
+            <img src="https://grupomerc.com/wp-content/uploads/2024/01/tematica-1.jpg   " alt="Evento 1">
+            <h3>Fiesta de Colores y Palabras</h3>
+            <p>Una divertida actividad para los más pequeños, donde aprenderán nuevas palabras en inglés jugando con colores y objetos.</p>
+            <div class="event-details">
+                <p><strong>Fecha:</strong> 20 de Diciembre, 2024</p>
+                <p><strong>Ubicación: </strong> Villa Olimpica</p>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img src="https://www.klim.com.co/sites/default/files/styles/content_card_desktop_597x336/public/2023-11/caperucita-roja-bosque-fondo.jpg?itok=-5Ya7ua0" alt="Evento 2">
+            <h3>Cuentos Interactivos en Inglés</h3>
+            <p>Vive una experiencia mágica escuchando cuentos en inglés mientras participas con los personajes y actividades divertidas.</p>
+            <div class="event-details">
+                <p><strong>Fecha:</strong> 5 de Enero, 2025</p>
+                <p><strong>Ubicación: </strong> Biblioteca Banco de la República</p>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img src="https://i.pinimg.com/474x/de/a2/70/dea27098ce59c8e1c37cf9cf501cbe49.jpg" alt="Evento 3">
+            <h3>Juego de Búsqueda del Tesoro en Inglés</h3>
+            <p>Los niños deberán seguir pistas en inglés para encontrar el tesoro escondido. ¡Una aventura llena de aprendizaje y diversión!</p>
+            <div class="event-details">
+                <p><strong>Fecha:</strong> 12 de Febrero, 2025</p>
+                <p><strong>Ubicación: </strong>Villa Olimpica</p>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <img src="https://i.pinimg.com/originals/47/43/82/474382e5d96205b0976512032401d8bf.jpg" alt="Evento 4">
+            <h3>Teatro de Sombras en Inglés</h3>
+            <p>Un evento único donde los niños podrán disfrutar de un teatro de sombras interactivo, con historias y canciones en inglés.</p>
+            <div class="event-details">
+                <p><strong>Fecha:</strong> 25 de Marzo, 2025</p>
+                <p><strong>Ubicación: </strong>Megacolegio Los Colores</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Aventuras en Inglés. Todos los derechos reservados.</p>
+        <div class="footer-icons">
+            <img src="https://img.icons8.com/material-outlined/24/ffffff/facebook.png" alt="Facebook">
+            <img src="https://img.icons8.com/material-outlined/24/ffffff/twitter.png" alt="Twitter">
+            <img src="https://img.icons8.com/material-outlined/24/ffffff/instagram-new.png" alt="Instagram">
+            <img src="https://img.icons8.com/material-outlined/24/ffffff/email.png" alt="Email">
+        </div>
+    </footer>
+
+    <script>
+        function openVideo(url) {
+            const width = window.innerWidth * 0.8;
+            const height = window.innerHeight * 0.8;
+            window.open(url, 'videoWindow', `width=${width},height=${height},left=${(window.innerWidth - width) / 2},top=${(window.innerHeight - height) / 2}`);
+        }
+    </script>
+</body>
+</html>

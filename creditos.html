@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuentos - Aventuras en Inglés</title>
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7751/7751143.png" type="image/x-icon"> 
-   <style>
+    <title>Créditos - Aventuras en Inglés</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7751/7751143.png" type="image/x-icon">
+    <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f8ff;
+            background-color: #f9f9f9;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            min-height: 100vh;
         }
 
         header {
-            background: linear-gradient(to right, #8bc34a, #4caf50); /* Degradado de color */
+            background: linear-gradient(to right, #8bc34a, #4caf50); 
             color: white;
             padding: 20px;
             width: 100%;
             display: flex;
-            align-items: center; 
+            align-items: center;
             position: relative;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
@@ -33,7 +33,7 @@
             margin: 0;
             display: flex;
             align-items: center;
-            padding-right: 20px; /
+            padding-right: 20px; 
         }
 
         .header-title img {
@@ -75,102 +75,122 @@
             margin-right: 8px;
         }
 
-        h1 {
-            margin: 0;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .story-item {
-            background-color: #ffffff; 
-            border: 2px solid #8bc34a; 
-            border-radius: 10px;
+        .vision-section {
             text-align: center;
+            padding: 50px 20px;
+            background-color: #f1f1f1;
+            margin-top: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .vision-section h2 {
+            font-size: 2.2em;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        .vision-section p {
+            font-size: 1.1em;
+            color: #666;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            justify-items: center;
+            margin-top: 40px;
+            padding: 0 20px;
+            animation: slideUp 2s ease-in-out;
+        }
+
+        .team-member {
+            text-align: center;
+            background-color: white;
             padding: 20px;
-            transition: transform 0.2s;
-            cursor: pointer; 
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            width: 250px;
+            transform: translateY(30px);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
         }
 
-        .story-item:hover {
-            transform: scale(1.05); 
+        .team-member h3 {
+            font-size: 1.5em;
+            color: #4caf50;
         }
 
-        .story-item h3 {
-            font-size: 1.2em;
-            margin: 10px 0 0;
-        }
-
-        .story-item p {
-            font-size: 0.9em;
-            margin: 5px 0;
+        .team-member p {
+            color: #666;
+            font-style: italic;
         }
 
         footer {
             background-color: #8bc34a;
             color: white;
             text-align: center;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
+            padding: 15px;
             width: 100%;
+            margin-top: auto;
         }
 
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgb(0,0,0); 
-            background-color: rgba(0,0,0,0.4); 
-            padding-top: 60px; 
+        footer p {
+            margin-top: 10px;
         }
 
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; 
-            max-width: 600px; 
-            border-radius: 10px;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
+        .footer-icons img {
+            width: 30px;
+            margin: 0 10px;
             cursor: pointer;
         }
 
-        @media (max-width: 1024px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr); 
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
 
         @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr; 
+            .team-container {
+                grid-template-columns: 1fr;
             }
+        }
+
+        nav {
+            background-color: #4caf50;
+            padding: 15px 0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .menu {
@@ -185,10 +205,6 @@
             margin: 0 20px;
         }
 
-        .menu a:hover {
-            color: #ffeb3b;
-        }
-
         .menu a {
             text-decoration: none;
             color: white;
@@ -196,29 +212,20 @@
             transition: color 0.3s;
         }
 
-        .menu a.inicio {
-            text-decoration: none;
-            color: rgb(0, 0, 0);
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav {
-            width: 100%;
-            background-color: #4caf50;
-            padding: 10px 0;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        .menu a:hover {
+            color: #ffeb3b;
         }
 
     </style>
 </head>
 <body>
+
     <header>
         <h1 class="header-title">
             <img src="https://media.lordicon.com/icons/wired/flat/106-map.svg" alt="Logo"> 
-            Cuentos educativos
+            Créditos
         </h1>
-        <p class="header-text">Descubre estos cuentos educativos que te enseñarán valiosas lecciones mientras te diviertes.</p>
+        <p class="header-text">Descubre quienes son los autores de la página.</p>
         <a href="index.html" class="home-button">
             <img src="https://img.icons8.com/ios-glyphs/30/8bc34a/home.png" alt="Home icon">Inicio
         </a>
@@ -235,187 +242,34 @@
         </ul>
     </nav>
 
- 
-    <main>
-        <h2>Elige un cuento para leer</h2>
-        <div class="grid-container">
-            <div class="story-item" onclick="openModal('story1')">
-                <h3>The Lion and the Mouse</h3>
-                <p>A story about friendship and kindness.</p>
-            </div>
+    <div class="vision-section">
+        <h2>Nuestra Visión</h2>
+        <p>
+            En "Aventuras en Inglés" creemos que aprender inglés debe ser una experiencia divertida y accesible para todos. Nuestra visión es ofrecer recursos educativos innovadores, fáciles de usar y dinámicos, con el objetivo de fomentar un aprendizaje activo y entretenido. Queremos empoderar a los estudiantes para que aprendan a su propio ritmo y se sientan motivados a continuar su viaje de aprendizaje.
+        </p>
+    </div>
 
-            <div class="story-item" onclick="openModal('story2')">
-                <h3>The Tortoise and the Hare</h3>
-                <p>A tale of slow and steady winning the race.</p>
-            </div>
-
-            <div class="story-item" onclick="openModal('story3')">
-                <h3>The Boy Who Cried Wolf</h3>
-                <p>A lesson about honesty and trust.</p>
-            </div>
-
-            <div class="story-item" onclick="openModal('story4')">
-                <h3>The Ugly Duckling</h3>
-                <p>A story about growing up and finding oneself.</p>
-            </div>
-
-            <div class="story-item" onclick="openModal('story5')">
-                <h3>Cinderella</h3>
-                <p>A classic tale of magic and kindness.</p>
-            </div>
-
-            <div class="story-item" onclick="openModal('story6')">
-                <h3>The Three Little Pigs</h3>
-                <p>A story about perseverance and cleverness.</p>
-            </div>
-
-            <div class="story-item" onclick="openModal('story7')">
-                <h3>Jack and the Beanstalk</h3>
-                <p>A tale of adventure and bravery.</p>
-            </div>
-
-            <div class="story-item" onclick="openModal('story8')">
-                <h3>Goldilocks and the Three Bears</h3>
-                <p>A story about curiosity and consequences.</p>
-            </div>
-
-            <div class="story-item" onclick="openModal('story9')">
-                <h3>The Gingerbread Man</h3>
-                <p>A fun story about a running cookie!</p>
-            </div>
-
-            <div class="story-item" onclick="openModal('story10')">
-                <h3>The Elves and the Shoemaker</h3>
-                <p>A tale about kindness and generosity.</p>
-            </div>
-
-            <div class="story-item" onclick="openModal('story11')">
-                <h3>The Little Red Hen</h3>
-                <p>A story about hard work and sharing.</p>
-            </div>
-
-            <div class="story-item" onclick="openModal('story12')">
-                <h3>The Frog Prince</h3>
-                <p>A tale of friendship and transformation.</p>
-            </div>
+    <div class="team-container">
+        <div class="team-member" style="animation-delay: 0s;">
+            <h3>Manuel Vargas</h3>
+            <p>Estudiante de la Universidad de Córdoba.</p>
         </div>
 
-        <div id="story1" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('story1')">&times;</span>
-                <h2>The Lion and the Mouse</h2>
-                <p>Once upon a time, a lion lay asleep in the forest. A little mouse came upon him unexpectedly, and in her fright and haste to get away, she accidentally ran across the lion's nose. Roused from his nap, the lion laid his huge paw angrily on the tiny creature to kill her. The poor mouse begged him, "Please let me go and some day I will surely repay you." The lion was much amused to think that a mouse could ever help him. But he was generous and finally let the mouse go.</p>
-                <p>Some days later, while stalking his prey in the forest, the lion was caught in the toils of a hunter's net. Unable to free himself, he filled the air with his angry roaring. The mouse recognized the voice and quickly found the lion struggling in the net. Running to one of the great ropes that bound him, she gnawed it until it broke, and soon the lion was free.</p>
-                <p>"You laughed when I said I would repay you," said the mouse. "Now you see that even a mouse can help a lion."</p>
-            </div>
+        <div class="team-member" style="animation-delay: 0.2s;">
+            <h3>Jean Alvarez</h3>
+            <p>Estudiante de la Universidad de Córdoba.</p>
         </div>
 
-        <div id="story2" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('story2')">&times;</span>
-                <h2>The Tortoise and the Hare</h2>
-                <p>Once upon a time, there was a hare who was very proud of how fast he could run. He bragged about it to all the animals in the forest. Tired of his boasting, the tortoise challenged him to a race.</p>
-                <p>The hare laughed and thought it was a joke. However, the tortoise insisted on racing, and they both agreed on a date.</p>
-                <p>On the day of the race, the hare darted off quickly, leaving the tortoise far behind. Feeling confident, the hare decided to take a nap. Meanwhile, the tortoise kept moving slowly but steadily. When the hare woke up, he saw that the tortoise was near the finish line. The hare ran as fast as he could, but it was too late. The tortoise crossed the finish line first!</p>
-                <p>The moral of the story is: Slow and steady wins the race.</p>
-            </div>
+        <div class="team-member" style="animation-delay: 0.4s;">
+            <h3>Isaac Martinez</h3>
+            <p>Estudiante de la Universidad de Córdoba.</p>
         </div>
 
-        <div id="story3" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('story3')">&times;</span>
-                <h2>The Boy Who Cried Wolf</h2>
-                <p>There was once a young shepherd who was bored as he sat on the side of a mountain, watching his flock of sheep. To amuse himself, he shouted, "Wolf! Wolf! The wolf is chasing the sheep!"</p>
-                <p>When the villagers came running up the hill to help, they found no wolf. The boy laughed at the sight of their angry faces. "Don't cry wolf when there is no wolf!" they said.</p>
-                <p>Later, he shouted again, "Wolf! Wolf!" and again the villagers ran to his aid. When they saw he was fooling them again, they were furious. "If you want to be taken seriously, you must not tell lies!"</p>
-                <p>One day, a wolf did come. The boy cried out, "Wolf! Wolf!" but this time the villagers did not believe him. They thought it was another trick, and the wolf got away with a sheep.</p>
-            </div>
+        <div class="team-member" style="animation-delay: 0.6s;">
+            <h3>Andrés Buelvas</h3>
+            <p>Estudiante de la Universidad de Córdoba.</p>
         </div>
-
-        <div id="story4" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('story4')">&times;</span>
-                <h2>The Ugly Duckling</h2>
-                <p>Once upon a time, there was an ugly duckling who was different from the rest of his family. All the other animals made fun of him. Feeling sad and alone, he decided to leave home.</p>
-                <p>As he wandered, he met many different animals who also made fun of him. But he never gave up hope. One day, he saw his reflection in the water and realized he had grown into a beautiful swan!</p>
-                <p>The moral of the story is: It’s okay to be different, and true beauty comes from within.</p>
-            </div>
-        </div>
-
-        <div id="story5" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('story5')">&times;</span>
-                <h2>Cinderella</h2>
-                <p>Cinderella was a kind girl who lived with her wicked stepmother and stepsisters. They treated her poorly and made her do all the housework. One day, the king announced a royal ball, and Cinderella longed to go.</p>
-                <p>With the help of her fairy godmother, Cinderella was transformed and able to attend the ball. She caught the eye of the prince, but when the clock struck midnight, she had to leave and lost her glass slipper.</p>
-                <p>The prince searched the kingdom for the girl who fit the slipper. When he found Cinderella, they lived happily ever after.</p>
-            </div>
-        </div>
-
-        <div id="story6" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('story6')">&times;</span>
-                <h2>The Three Little Pigs</h2>
-                <p>Three little pigs set out to build their houses. The first pig built a house of straw, the second a house of sticks, and the third a house of bricks. A big bad wolf came and blew down the straw and stick houses.</p>
-                <p>The two pigs ran to the brick house for safety. When the wolf came, he huffed and puffed, but he could not blow down the brick house. The pigs were safe, and they lived happily ever after.</p>
-            </div>
-        </div>
-
-        <div id="story7" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('story7')">&times;</span>
-                <h2>Jack and the Beanstalk</h2>
-                <p>Jack was a poor boy who traded his cow for magic beans. His mother was angry and threw the beans out the window. The next morning, a giant beanstalk had grown into the sky!</p>
-                <p>Jack climbed the beanstalk and found a giant’s castle. He stole gold and a magical harp, but the giant chased him. Jack climbed down, chopped down the beanstalk, and the giant fell.</p>
-                <p>Jack and his mother lived happily with their riches.</p>
-            </div>
-        </div>
-
-        <div id="story8" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('story8')">&times;</span>
-                <h2>Goldilocks and the Three Bears</h2>
-                <p>Goldilocks was a curious girl who entered the house of three bears. She tasted their porridge, sat in their chairs, and slept in their beds. When the bears came home, they found her sleeping in Baby Bear's bed!</p>
-                <p>Goldilocks woke up, saw the bears, and ran away. The bears were shocked, but they learned to lock their door.</p>
-            </div>
-        </div>
-
-        <div id="story9" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('story9')">&times;</span>
-                <h2>The Gingerbread Man</h2>
-                <p>Once upon a time, a little old woman baked a gingerbread man. To her surprise, he jumped out of the oven and ran away! The old woman and her husband chased after him.</p>
-                <p>The gingerbread man ran past many animals, each of them trying to catch him. He said, "You can't catch me! I'm the gingerbread man!" But in the end, he met a clever fox who tricked him and ate him.</p>
-            </div>
-        </div>
-
-        <div id="story10" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('story10')">&times;</span>
-                <h2>The Elves and the Shoemaker</h2>
-                <p>There was once a shoemaker who was very kind but had fallen on hard times. One night, he left out some leather to make shoes. The next morning, he found beautiful shoes made by tiny elves!</p>
-                <p>The shoemaker sold the shoes and prospered. He decided to leave out some leather as a thank you. The elves continued to help him, and he became rich and happy.</p>
-            </div>
-        </div>
-
-        <div id="story11" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('story11')">&times;</span>
-                <h2>The Little Red Hen</h2>
-                <p>The little red hen found some wheat and decided to plant it. She asked her friends for help, but they all refused. She planted the wheat, harvested it, and made bread all by herself.</p>
-                <p>When the bread was ready, her friends wanted to eat it, but the little red hen said, "No, I did all the work!" And she enjoyed the bread all by herself.</p>
-            </div>
-        </div>
-
-        <div id="story12" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('story12')">&times;</span>
-                <h2>The Frog Prince</h2>
-                <p>A beautiful princess lost her golden ball in a pond. A frog offered to retrieve it if she promised to be his friend. She agreed but did not keep her promise.</p>
-                <p>Eventually, the frog became a prince when she kissed him. They lived happily together, teaching that promises should be kept.</p>
-            </div>
-        </div>
-    </main>
+    </div>
 
     <footer>
         <p>&copy; 2024 Aventuras en Inglés. Todos los derechos reservados.</p>
@@ -427,23 +281,5 @@
         </div>
     </footer>
 
-    <script>
-        function openModal(storyId) {
-            document.getElementById(storyId).style.display = "block";
-        }
-
-        function closeModal(storyId) {
-            document.getElementById(storyId).style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            var modals = document.getElementsByClassName('modal');
-            for (var i = 0; i < modals.length; i++) {
-                if (event.target == modals[i]) {
-                    closeModal(modals[i].id);
-                }
-            }
-        }
-    </script>
 </body>
 </html>

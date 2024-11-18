@@ -5,551 +5,278 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juegos - Aventuras en Inglés</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7751/7751143.png" type="image/x-icon"> 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f8ff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header {
-            background: linear-gradient(to right, #8bc34a, #4caf50); 
-            color: white;
-            padding: 20px;
-            width: 100%;
-            display: flex;
-            align-items: center; 
-            justify-content: center;
-            position: relative;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .header-title {
-            font-size: 2em;
-            font-weight: bold;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            animation: pulse 3s infinite;
-        }
-
-        .header-title img {
-            width: 50px;
-            animation: pulse 3s infinite;
-        }
-
-        .header-text {
-            text-align: center; 
-            flex: 1; 
-            margin: 0;
-            padding: 0 20px; 
-        }
-
-        .home-button {
-            background-color: #ffffff;
-            color: #8bc34a;
-            padding: 10px 20px;
-            border: 2px solid #8bc34a; 
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.2s, color 0.2s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
-        }
-
-        .home-button:hover {
-            background-color: #8bc34a;
-            color: #ffffff;
-        }
-
-        .home-button img {
-            width: 18px;
-            height: 18px;
-            margin-right: 8px;
-        }
-
-        footer {
-            background-color: #8bc34a;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        @media (max-width: 1024px) {
-            .grid-container {
-                grid-template-columns: repeat(3, 1fr); 
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Juegos - Aventuras en Inglés</title>
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7751/7751143.png" type="image/x-icon"> 
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f0f8ff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
-        }
-
-        @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr); 
+    
+            header {
+                background: linear-gradient(to right, #8bc34a, #4caf50);
+                color: white;
+                padding: 15px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             }
-        }
-
-        @media (max-width: 480px) {
-            .grid-container {
-                grid-template-columns: 1fr; 
+    
+            .header-title {
+                font-size: 1.8em;
+                font-weight: bold;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                text-align: center;
+                animation: pulse 3s infinite;
             }
-        }
-
-        .menu {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu li {
-            margin: 0 20px;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .menu a.inicio {
-            text-decoration: none;
-            color: rgb(0, 0, 0);
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav {
-            width: 100%;
-            background-color: #4caf50;
-            padding: 10px 0;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        main {
-            max-width: 1200px;
-            padding: 20px;
-        }
-
-        h2.centrado {
-            text-align: center;
-            color: #4caf50;
-            margin: 10px 0;
-            font-size: 1.8em;
-        }
-
-        .centrado {
-            text-align: center;
-            color: #000000;
-            margin: 10px 0;
-        }
-
-        .description-cards {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-            max-width: 1200px;
-        }
-
-        .card {
-            background-color: #ffffff;
-            border: 2px solid #8bc34a;
-            border-radius: 10px;
-            padding: 20px;
-            width: 220px;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-            background-color: #e8f5e9;
-        }
-
-        .about-section, .testimonials, .faq-section, .contact-section {
-            background-color: #e8f5e9;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-        }
-
-        .about-section h2, .testimonials h2, .faq-section h2, .contact-section h2 {
-            margin: 0 0 20px 0;
-            color: #4caf50;
-        }
-
-        .testimonial {
-            margin: 15px 0;
-            border-left: 4px solid #8bc34a;
-            padding-left: 20px;
-            font-style: italic;
-        }
-
-        .faq {
-            margin-bottom: 10px;
-            padding: 10px;
-            background-color: #ffe0b2;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .faq:hover {
-            background-color: #ef5350;
-            color: white;
-        }
-
-        .faq-answer {
-            display: none;
-            padding: 10px;
-            background-color: #ffab91;
-            border-radius: 5px;
-        }
-
-        .contact-section form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-section input, .contact-section textarea {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #8bc34a;
-            border-radius: 5px;
-        }
-
-        .contact-section button {
-            padding: 10px;
-            background-color: #8bc34a;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .contact-section button:hover {
-            background-color: #4caf50;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #8bc34a;
-            color: white;
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-        }
-
-        .floating-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #8bc34a;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .floating-button:hover {
-            background-color: #4caf50;
-            transform: scale(1.1);
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .social-icon {
-            width: 40px;
-            margin: 0 10px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.1);
-        }
-        
-        header {
-            background: linear-gradient(to right, #8bc34a, #4caf50); 
-            color: white;
-            padding: 20px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .header-title {
-            font-size: 2em;
-            font-weight: bold;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            animation: pulse 3s infinite;
-        }
-
-        .header-title img {
-            width: 50px;
-            animation: pulse 3s infinite;
-        }
-
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-10px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        nav {
-            width: 100%;
-            background-color: #4caf50;
-            padding: 10px 0;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .menu {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu li {
-            margin: 0 20px;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .menu a.inicio {
-            text-decoration: none;
-            color: rgb(0, 0, 0);
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-
-        main {
-            max-width: 1200px;
-            padding: 20px;
-        }
-
-        h2.centrado {
-            text-align: center;
-            color: #4caf50;
-            margin: 10px 0;
-            font-size: 1.8em;
-        }
-
-        .centrado {
-            text-align: center;
-            color: #000000;
-            margin: 10px 0;
-        }
-
-        .description-cards {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-            max-width: 1200px;
-        }
-
-        .card {
-            background-color: #ffffff;
-            border: 2px solid #8bc34a;
-            border-radius: 10px;
-            padding: 20px;
-            width: 220px;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-            background-color: #e8f5e9;
-        }
-
-        .about-section, .testimonials, .faq-section, .contact-section {
-            background-color: #e8f5e9;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-        }
-
-        .about-section h2, .testimonials h2, .faq-section h2, .contact-section h2 {
-            margin: 0 0 20px 0;
-            color: #4caf50;
-        }
-
-        .testimonial {
-            margin: 15px 0;
-            border-left: 4px solid #8bc34a;
-            padding-left: 20px;
-            font-style: italic;
-        }
-
-        .faq {
-            margin-bottom: 10px;
-            padding: 10px;
-            background-color: #ffe0b2;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .faq:hover {
-            background-color: #ef5350;
-            color: white;
-        }
-
-        .faq-answer {
-            display: none;
-            padding: 10px;
-            background-color: #ffab91;
-            border-radius: 5px;
-        }
-
-        .contact-section form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-section input, .contact-section textarea {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #8bc34a;
-            border-radius: 5px;
-        }
-
-        .contact-section button {
-            padding: 10px;
-            background-color: #8bc34a;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .contact-section button:hover {
-            background-color: #4caf50;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #8bc34a;
-            color: white;
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-        }
-
-        .floating-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #8bc34a;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .floating-button:hover {
-            background-color: #4caf50;
-            transform: scale(1.1);
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .social-icon {
-            width: 40px;
-            margin: 0 10px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .menu a:hover {
-            color: #ffeb3b;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.1);
-        }
+    
+            .header-title img {
+                width: 40px;
+                height: auto;
+                animation: pulse 3s infinite;
+            }
+    
+            nav {
+                width: 100%;
+                background-color: #4caf50;
+                padding: 10px 0;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+    
+            .menu {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
+            }
+    
+            .menu li {
+                margin: 0 10px;
+            }
+    
+            .menu a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+    
+            .menu a:hover {
+                color: #ffeb3b;
+            }
+    
+            main {
+                max-width: 1200px;
+                padding: 20px;
+            }
+    
+            h2.centrado {
+                text-align: center;
+                color: #4caf50;
+                margin: 10px 0;
+                font-size: 1.8em;
+            }
+    
+            .centrado {
+                text-align: center;
+                color: #000000;
+                margin: 10px 0;
+            }
+    
+            .description-cards {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 20px;
+            }
+    
+            .card {
+                background-color: #ffffff;
+                border: 2px solid #8bc34a;
+                border-radius: 10px;
+                padding: 20px;
+                width: 220px;
+                text-align: center;
+                cursor: pointer;
+                transition: transform 0.3s, box-shadow 0.3s;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+    
+            .card:hover {
+                transform: scale(1.05);
+                box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+                background-color: #e8f5e9;
+            }
+    
+            .about-section, .testimonials, .faq-section, .contact-section {
+                background-color: #e8f5e9;
+                border-radius: 10px;
+                padding: 20px;
+                margin: 20px auto;
+                max-width: 800px;
+            }
+    
+            .faq {
+                margin-bottom: 10px;
+                padding: 10px;
+                background-color: #ffe0b2;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background-color 0.3s;
+            }
+    
+            .faq:hover {
+                background-color: #ef5350;
+                color: white;
+            }
+    
+            .faq-answer {
+                display: none;
+                padding: 10px;
+                background-color: #ffab91;
+                border-radius: 5px;
+            }
+    
+            .contact-section form {
+                display: flex;
+                flex-direction: column;
+            }
+    
+            .contact-section input, .contact-section textarea {
+                margin: 10px 0;
+                padding: 10px;
+                border: 1px solid #8bc34a;
+                border-radius: 5px;
+            }
+    
+            .contact-section button {
+                padding: 10px;
+                background-color: #8bc34a;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+    
+            .contact-section button:hover {
+                background-color: #4caf50;
+            }
+    
+            footer {
+                text-align: center;
+                padding: 10px;
+                background-color: #8bc34a;
+                color: white;
+                width: 100%;
+                position: fixed;
+                bottom: 0;
+            }
+    
+            .floating-button {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: #8bc34a;
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+                transition: background-color 0.3s, transform 0.3s;
+            }
+    
+            .floating-button:hover {
+                background-color: #4caf50;
+                transform: scale(1.1);
+            }
+    
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+    
+            .social-icon {
+                width: 40px;
+                margin: 0 10px;
+                cursor: pointer;
+                transition: transform 0.3s;
+            }
+    
+            .social-icon:hover {
+                transform: scale(1.1);
+            }
     
 
-    </style>
+            @media (max-width: 1024px) {
+                .menu {
+                    flex-direction: column;
+                    align-items: center;
+                }
+    
+                .description-cards {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+    
+            @media (max-width: 768px) {
+                .menu li {
+                    margin: 10px 0;
+                }
+    
+                .description-cards {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+    
+                .header-title {
+                    font-size: 1.5em;
+                }
+            }
+    
+            @media (max-width: 480px) {
+                .header-title {
+                    font-size: 1.2em;
+                }
+    
+                .description-cards {
+                    grid-template-columns: 1fr;
+                }
+            }
+    
+        </style>
 </head>
 <body>
     <header>
-        <h1 class="header-title">
-            <img src="https://media.lordicon.com/icons/wired/flat/106-map.svg" alt="Logo"> 
-            Aventuras en Inglés
-        </h1>
-    </header>
+    <h1 class="header-title">
+        <img src="https://media.lordicon.com/icons/wired/flat/106-map.svg" alt="Logo"> 
+        Aventuras en Inglés
+    </h1>
+</header>
     
     <nav>
         <ul class="menu">

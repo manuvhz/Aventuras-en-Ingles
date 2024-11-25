@@ -6,49 +6,88 @@
     <title>Créditos - Aventuras en Inglés</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7751/7751143.png" type="image/x-icon">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+ body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f0f8ff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            header {
+                background: linear-gradient(to right, #8bc34a, #4caf50);
+                color: white;
+                padding: 15px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            }
+    
+            .header-title {
+                font-size: 1.8em;
+                font-weight: bold;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                text-align: center;
+                animation: pulse 3s infinite;
+            }
+    
+            .header-title img {
+                width: 40px;
+                height: auto;
+                animation: pulse 3s infinite;
+            }
+    
+            nav {
+                width: 100%;
+                background-color: #4caf50;
+                padding: 10px 0;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+    
+            .menu {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
+            }
+    
+            .menu li {
+                margin: 0 10px;
+            }
+    
+            .menu a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+    
+            .menu a:hover {
+                color: #ffeb3b;
+            }
+    
+            main {
+                max-width: 1200px;
+                padding: 20px;
+            }
+    
+            h2.centrado {
+                text-align: center;
+                color: #4caf50;
+                margin: 10px 0;
+                font-size: 1.8em;
+            }
 
-        header {
-            background: linear-gradient(to right, #8bc34a, #4caf50); 
-            color: white;
-            padding: 20px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            position: relative;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .header-title {
-            font-size: 2em;
-            font-weight: bold;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            padding-right: 20px; 
-        }
-
-        .header-title img {
-            width: 50px; 
-            margin-right: 10px; 
-        }
-
-        .header-text {
-            text-align: center; 
-            flex: 1; 
-            margin: 0;
-            padding: 0 20px; 
-        }
-
-        .home-button {
+            
+            .home-button {
             background-color: #ffffff;
             color: #8bc34a;
             padding: 10px 20px;
@@ -75,37 +114,80 @@
             margin-right: 8px;
         }
 
-        .vision-section {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #f1f1f1;
-            margin-top: 40px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+        .header-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            padding-right: 20px; 
         }
 
-        .vision-section h2 {
-            font-size: 2.2em;
-            color: #4caf50;
-            margin-bottom: 20px;
+        .header-title img {
+            width: 50px; 
+            margin-right: 10px; 
         }
 
-        .vision-section p {
-            font-size: 1.1em;
-            color: #666;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
+        .header-text {
+            text-align: center; 
+            flex: 1; 
+            margin: 0;
+            padding: 0 20px; 
         }
+    
+            footer {
+                text-align: center;
+                padding: 10px;
+                background-color: #8bc34a;
+                color: white;
+                width: 100%;
+                position: fixed;
+                bottom: 0;
+            }
+
+            @media (max-width: 1024px) {
+                .menu {
+                    flex-direction: column;
+                    align-items: center;
+                }
+    
+                .description-cards {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+    
+            @media (max-width: 768px) {
+                .menu li {
+                    margin: 10px 0;
+                }
+    
+                .description-cards {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+    
+                .header-title {
+                    font-size: 1.5em;
+                }
+            }
+    
+            @media (max-width: 480px) {
+                .header-title {
+                    font-size: 1.2em;
+                }
+    
+                .description-cards {
+                    grid-template-columns: 1fr;
+                }
+            }
 
         .team-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             justify-items: center;
             margin-top: 40px;
             padding: 0 20px;
-            animation: slideUp 2s ease-in-out;
         }
 
         .team-member {
@@ -116,9 +198,6 @@
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
             max-width: 300px;
             width: 250px;
-            transform: translateY(30px);
-            opacity: 0;
-            animation: fadeInUp 1s ease forwards;
         }
 
         .team-member h3 {
@@ -131,89 +210,28 @@
             font-style: italic;
         }
 
-        footer {
-            background-color: #8bc34a;
-            color: white;
+        .team-image-card {
             text-align: center;
-            padding: 15px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            width: 250px;
+        }
+
+        .team-image-card img {
             width: 100%;
-            margin-top: auto;
+            height: auto;
+            border-radius: 8px;
+                        color: #4caf50;
         }
 
-        footer p {
-            margin-top: 10px;
-        }
-
-        .footer-icons img {
-            width: 30px;
-            margin: 0 10px;
-            cursor: pointer;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideUp {
-            0% {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                transform: translateY(30px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .team-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        nav {
-            background-color: #4caf50;
-            padding: 15px 0;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .menu {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu li {
-            margin: 0 20px;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .menu a:hover {
-            color: #ffeb3b;
+        .h2team {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+                        color: #4caf50;
         }
 
     </style>
@@ -234,7 +252,7 @@
     <nav>
         <ul class="menu">
             <li><a href="metodologia.html">Metodología</a></li>
-            <li><a href="recursos.html">Recursos Adicionales</a></li>
+            <li><a href="quiz.html">Quiz Evaluativo</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="eventos.html">Eventos</a></li>
             <li><a href="comunidad.html">Comunidad</a></li>
@@ -242,32 +260,26 @@
         </ul>
     </nav>
 
-    <div class="vision-section">
-        <h2>Nuestra Visión</h2>
-        <p>
-            En "Aventuras en Inglés" creemos que aprender inglés debe ser una experiencia divertida y accesible para todos. Nuestra visión es ofrecer recursos educativos innovadores, fáciles de usar y dinámicos, con el objetivo de fomentar un aprendizaje activo y entretenido. Queremos empoderar a los estudiantes para que aprendan a su propio ritmo y se sientan motivados a continuar su viaje de aprendizaje.
-        </p>
-    </div>
-
     <div class="team-container">
-        <div class="team-member" style="animation-delay: 0s;">
+        <div class="team-member">
             <h3>Manuel Vargas</h3>
             <p>Estudiante de la Universidad de Córdoba.</p>
         </div>
-
-        <div class="team-member" style="animation-delay: 0.2s;">
+        <div class="team-member">
             <h3>Jean Alvarez</h3>
             <p>Estudiante de la Universidad de Córdoba.</p>
         </div>
-
-        <div class="team-member" style="animation-delay: 0.4s;">
+        <div class="team-member">
             <h3>Isaac Martinez</h3>
             <p>Estudiante de la Universidad de Córdoba.</p>
         </div>
-
-        <div class="team-member" style="animation-delay: 0.6s;">
+        <div class="team-member">
             <h3>Andrés Buelvas</h3>
             <p>Estudiante de la Universidad de Córdoba.</p>
+        </div>
+        <div class="team-image-card">
+            <h3 class="h2team">Imagen del Equipo</h3>
+            <img src="https://i.postimg.cc/PNndtH1q/Captura-de-pantalla-2024-11-25-091100.jpg" alt="Imagen del Proyecto">
         </div>
     </div>
 

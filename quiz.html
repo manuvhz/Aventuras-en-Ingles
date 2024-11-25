@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Aventuras en Inglés</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7751/7751143.png" type="image/x-icon"> 
+    <style>
+         body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f0f8ff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            header {
+                background: linear-gradient(to right, #8bc34a, #4caf50);
+                color: white;
+                padding: 15px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            }
+    
+            .header-title {
+                font-size: 1.8em;
+                font-weight: bold;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                text-align: center;
+                animation: pulse 3s infinite;
+            }
+    
+            .header-title img {
+                width: 40px;
+                height: auto;
+                animation: pulse 3s infinite;
+            }
+    
+            nav {
+                width: 100%;
+                background-color: #4caf50;
+                padding: 10px 0;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+    
+            .menu {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
+            }
+    
+            .menu li {
+                margin: 0 10px;
+            }
+    
+            .menu a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+    
+            .menu a:hover {
+                color: #ffeb3b;
+            }
+    
+            main {
+                max-width: 1200px;
+                padding: 20px;
+            }
+    
+            h2.centrado {
+                text-align: center;
+                color: #4caf50;
+                margin: 10px 0;
+                font-size: 1.8em;
+            }
+
+            
+            .home-button {
+            background-color: #ffffff;
+            color: #8bc34a;
+            padding: 10px 20px;
+            border: 2px solid #8bc34a; 
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .home-button:hover {
+            background-color: #8bc34a;
+            color: #ffffff;
+        }
+
+        .home-button img {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+        }
+
+
+        .header-title {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            padding-right: 20px; 
+        }
+
+        .header-title img {
+            width: 50px; 
+            margin-right: 10px; 
+        }
+
+        .header-text {
+            text-align: center; 
+            flex: 1; 
+            margin: 0;
+            padding: 0 20px; 
+        }
+    
+            @media (max-width: 1024px) {
+                .menu {
+                    flex-direction: column;
+                    align-items: center;
+                }
+    
+                .description-cards {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+    
+            @media (max-width: 768px) {
+                .menu li {
+                    margin: 10px 0;
+                }
+    
+                .description-cards {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+    
+                .header-title {
+                    font-size: 1.5em;
+                }
+            }
+    
+            @media (max-width: 480px) {
+                .header-title {
+                    font-size: 1.2em;
+                }
+    
+                .description-cards {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+        nav {
+            width: 100%;
+            background-color: #4caf50;
+            padding: 10px 0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        main {
+            max-width: 1200px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #4caf50;
+        }
+
+        .menu a:hover {
+            color: #ffeb3b;
+        }
+
+        main {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .quiz-benefits {
+        margin: 20px auto;
+        max-width: 800px;
+        text-align: left;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .quiz-benefits h3 {
+        color: #4caf50;
+        text-align: center;
+    }
+
+    .quiz-benefits ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .quiz-benefits li {
+        margin: 10px 0;
+        font-size: 1.1em;
+        display: flex;
+        align-items: center;
+    }
+
+    .quiz-benefits li::before {
+        content: '✔️';
+        margin-right: 10px;
+        color: #4caf50;
+        font-size: 1.3em;
+    }
+
+    .quiz-image {
+        margin: 20px auto;
+        max-width: 300px;
+    }
+
+    .quiz-image img {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .quiz-button {
+        background-color: #ffeb3b;
+        color: #000000;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.2em;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+        cursor: pointer;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+
+    .quiz-button:hover {
+        background-color: #fdd835;
+        color: #ffffff;
+        transform: translateY(-2px);
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">
+            <img src="https://media.lordicon.com/icons/wired/flat/106-map.svg" alt="Logo"> 
+            Quiz Evaluativo
+        </h1>
+        <p class="header-text">Refuerza tus conocimientos adquiridos.</p>
+        <a href="index.html" class="home-button">
+            <img src="https://img.icons8.com/ios-glyphs/30/8bc34a/home.png" alt="Home icon">Inicio
+        </a>
+    </header>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="metodologia.html">Metodología</a></li>
+            <li><a href="quiz.html">Quiz Evaluativo</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="creditos.html">Créditos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>¡Desafía tu inglés con nuestro Quiz interactivo!</h2>
+        <p>Prepárate para una experiencia divertida y educativa diseñada para mejorar tus habilidades.</p>
+    
+        <div class="quiz-benefits">
+            <h3>¿Por qué hacer este Quiz?</h3>
+            <ul>
+                <li>📚 Refuerza tus conocimientos adquiridos.</li>
+                <li>🎯 Identifica tus fortalezas y áreas de mejora.</li>
+                <li>⏱ Aprende mientras te diviertes en pocos minutos.</li>
+                <li>🏆 Desbloquea logros y sigue avanzando.</li>
+            </ul>
+        </div>
+    
+        <div class="quiz-image">
+            
+        </div>
+    
+        <a href="#" class="quiz-button" onclick="return openQuiz()">¡Haz el Quiz ahora!</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Aventuras en Inglés. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        function openQuiz() {
+            window.open(
+                "https://forms.gle/CxC43hm61GkuZR6p7", 
+                "QuizWindow", 
+                "width=800,height=600,top=100,left=100,scrollbars=yes,resizable=yes" // Configuración de la ventana
+            );
+            return false; 
+        }
+    </script>
+</body>
+</html>

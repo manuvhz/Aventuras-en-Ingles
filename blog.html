@@ -6,16 +6,6 @@
     <title>Metodologia - Aventuras en Inglés</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7751/7751143.png" type="image/x-icon"> 
    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f8ff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
         .blog-container {
         display: flex;
         justify-content: center;
@@ -77,40 +67,89 @@
     .blog-post button:hover {
         background-color: #45a049;
     }
+    
+    body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f0f8ff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            header {
+                background: linear-gradient(to right, #8bc34a, #4caf50);
+                color: white;
+                padding: 15px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            }
+    
+            .header-title {
+                font-size: 1.8em;
+                font-weight: bold;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                text-align: center;
+                animation: pulse 3s infinite;
+            }
+    
+            .header-title img {
+                width: 40px;
+                height: auto;
+                animation: pulse 3s infinite;
+            }
+    
+            nav {
+                width: 100%;
+                background-color: #4caf50;
+                padding: 10px 0;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+    
+            .menu {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
+            }
+    
+            .menu li {
+                margin: 0 10px;
+            }
+    
+            .menu a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+    
+            .menu a:hover {
+                color: #ffeb3b;
+            }
+    
+            main {
+                max-width: 1200px;
+                padding: 20px;
+            }
+    
+            h2.centrado {
+                text-align: center;
+                color: #4caf50;
+                margin: 10px 0;
+                font-size: 1.8em;
+            }
 
-        header {
-            background: linear-gradient(to right, #8bc34a, #4caf50); 
-            color: white;
-            padding: 20px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            position: relative;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .header-title {
-            font-size: 2em;
-            font-weight: bold;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            padding-right: 20px; 
-        }
-
-        .header-title img {
-            width: 50px; 
-            margin-right: 10px; 
-        }
-
-        .header-text {
-            text-align: center; 
-            flex: 1; 
-            margin: 0;
-            padding: 0 20px; 
-        }
-
-        .home-button {
+            
+            .home-button {
             background-color: #ffffff;
             color: #8bc34a;
             padding: 10px 20px;
@@ -136,58 +175,73 @@
             height: 18px;
             margin-right: 8px;
         }
-        footer {
-            background-color: #8bc34a;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            width: 100%;
-        }
 
-        @media (max-width: 1200px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr); 
-            }
-        }
 
-        @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr; 
-            }
-        }
-
-        .menu {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 0;
+        .header-title {
+            font-size: 2em;
+            font-weight: bold;
             margin: 0;
+            display: flex;
+            align-items: center;
+            padding-right: 20px; 
         }
 
-        .menu li {
-            margin: 0 20px;
+        .header-title img {
+            width: 50px; 
+            margin-right: 10px; 
         }
 
-        .menu a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: color 0.3s;
+        .header-text {
+            text-align: center; 
+            flex: 1; 
+            margin: 0;
+            padding: 0 20px; 
         }
+    
+            footer {
+                text-align: center;
+                padding: 10px;
+                background-color: #8bc34a;
+                color: white;
+                width: 100%;
+                position: fixed;
+                bottom: 0;
+            }
 
-        .menu a.inicio {
-            text-decoration: none;
-            color: rgb(0, 0, 0);
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav {
-            width: 100%;
-            background-color: #4caf50;
-            padding: 10px 0;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-        }
+            @media (max-width: 1024px) {
+                .menu {
+                    flex-direction: column;
+                    align-items: center;
+                }
+    
+                .description-cards {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+    
+            @media (max-width: 768px) {
+                .menu li {
+                    margin: 10px 0;
+                }
+    
+                .description-cards {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+    
+                .header-title {
+                    font-size: 1.5em;
+                }
+            }
+    
+            @media (max-width: 480px) {
+                .header-title {
+                    font-size: 1.2em;
+                }
+    
+                .description-cards {
+                    grid-template-columns: 1fr;
+                }
+            }
     </style>
 </head>
 <body>
@@ -205,7 +259,7 @@
     <nav>
         <ul class="menu">
             <li><a href="metodologia.html">Metodología</a></li>
-            <li><a href="recursos.html">Recursos Adicionales</a></li>
+            <li><a href="quiz.html">Quiz Evaluativo</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="eventos.html">Eventos</a></li>
             <li><a href="comunidad.html">Comunidad</a></li>
